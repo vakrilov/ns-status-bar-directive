@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 
 import { DataService, DataItem } from "../../shared/data.service";
+import { Page, Color } from "tns-core-modules/ui/page";
 
 @Component({
     selector: "ItemDetail",
@@ -14,8 +15,8 @@ export class ItemDetailComponent implements OnInit {
     constructor(
         private _data: DataService,
         private _route: ActivatedRoute,
-        private _routerExtensions: RouterExtensions
-    ) { }
+        private _routerExtensions: RouterExtensions) {
+    }
 
     ngOnInit(): void {
         const id = +this._route.snapshot.params.id;

@@ -1,7 +1,9 @@
-<ActionBar>
+<ActionBar backgroundColor="lightgreen">
     <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
     <Label [text]="item.name"></Label>
 </ActionBar>
+
+<status-bar color="lightgreen" statusBarStyle="light"></status-bar>
 
 <GridLayout>
     <Label class="m-10 h3" verticalAlignment="top" [text]="item.description"></Label>
