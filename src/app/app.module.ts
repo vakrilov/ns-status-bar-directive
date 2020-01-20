@@ -4,6 +4,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { TabstripItemComponent } from "./tabstrip-item/tabstrip-item.component";
+import { WrappedEmptyOutletComponent } from "./wrapped-empty-outlet";
 
 @NgModule({
     bootstrap: [
@@ -16,6 +17,7 @@ import { TabstripItemComponent } from "./tabstrip-item/tabstrip-item.component";
     declarations: [
         AppComponent,
         TabstripItemComponent,
+        WrappedEmptyOutletComponent,
     ],
     schemas: [
         NO_ERRORS_SCHEMA

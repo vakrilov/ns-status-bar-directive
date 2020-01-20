@@ -1,34 +1,24 @@
 <GridLayout rows="* auto">
-    <BottomNavigation #bottomNavigation>
-        <!-- <TabStrip>
-            <TabStripItem class="navigation__item">
-                <Label text="Home"></Label>
-                <Image src="font://&#xf015;" class="fas t-36"></Image>
-            </TabStripItem>
-            <TabStripItem class="navigation__item">
-                <Label text="Browse"></Label>
-                <Image src="font://&#xf1ea;" class="far t-36"></Image>
-            </TabStripItem>
-            <TabStripItem class="navigation__item">
-                <Label text="Search"></Label>
-                <Image src="font://&#xf002;" class="fas t-36"></Image>
-            </TabStripItem>
-        </TabStrip> -->
+    <!-- BottomNavigation wrapped inside a separate layout as recommended here:
+         https://docs.nativescript.org/core-concepts/nested-navigation#simple-rule -->
+    <GridLayout>
+        <BottomNavigation #bottomNavigation>
+            <TabContentItem>
+                <page-router-outlet name="homeTab"></page-router-outlet>
+            </TabContentItem>
 
-        <TabContentItem>
-            <page-router-outlet name="homeTab"></page-router-outlet>
-        </TabContentItem>
+            <TabContentItem>
+                <page-router-outlet name="browseTab"></page-router-outlet>
+            </TabContentItem>
 
-        <TabContentItem>
-            <page-router-outlet name="browseTab"></page-router-outlet>
-        </TabContentItem>
+            <TabContentItem>
+                <page-router-outlet name="searchTab"></page-router-outlet>
+            </TabContentItem>
+        </BottomNavigation>
+    </GridLayout>
 
-        <TabContentItem>
-            <page-router-outlet name="searchTab"></page-router-outlet>
-        </TabContentItem>
-    </BottomNavigation>
-
-    <GridLayout row="1" columns="*, *, *" opacity="0.8">
+    <!-- Custom TabStrip -->
+    <GridLayout row="1" columns="*, *, *">
         <tb-tabstrip-item col="0" id="home" icon="font://&#xf015;" text="Home" (itemTap)="onButtonTap($event)">
         </tb-tabstrip-item>
         <tb-tabstrip-item col="1" id="browse" icon="font://&#xf1ea;" text="Browse" (itemTap)="onButtonTap($event)">
